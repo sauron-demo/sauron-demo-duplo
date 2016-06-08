@@ -7,7 +7,7 @@ state_machine:
     status_checks:
       - merge-label:
           label_name: 'SAURON-BOT: Merge It!'
-      hotfix: true
+    hotfix: true
     skip-ci: true
     on_success:
       transition_state: IntegrationTestState
