@@ -19,7 +19,7 @@ state_machine:
     on_success:
       transition_state: MergedState
     on_failure:
-      transition_state: null
+      transition_state: CodeReviewState
 
   QueuedState:
     status_checks:
