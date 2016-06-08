@@ -16,8 +16,10 @@ state_machine:
 
   IntegrationTestState:
     status_checks: null
-    on_success: null
-    on_failure: null
+    on_success:
+      transition_state: null
+    on_failure:
+      transition_state: null
 
   QueuedState:
     status_checks:
