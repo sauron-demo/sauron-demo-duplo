@@ -17,7 +17,7 @@ state_machine:
   IntegrationTestState:
     status_checks: null
     on_success:
-      transition_state: null
+      transition_state: MergedState
     on_failure:
       transition_state: null
 
