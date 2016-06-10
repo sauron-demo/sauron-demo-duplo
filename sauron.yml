@@ -20,6 +20,11 @@ state_machine:
       transition_state: MergedState
     on_failure:
       transition_state: CodeReviewState
+    mordor:
+      mordor-glue:
+        parallelism: 2
+      mordor-canary:
+        parallelism: 2
 
   QueuedState:
     status_checks:
