@@ -15,9 +15,11 @@ state_machine:
       transition_state: CodeReviewState
 
   IntegrationTestState:
-    status_checks: null
+    status_checks:
+      - mordor-glue: null
+      - mordor-canary: null
     on_success:
-      transition_state: MergedState
+      transition_state: QueuedState
     on_failure:
       transition_state: CodeReviewState
     mordor:
