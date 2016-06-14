@@ -24,9 +24,9 @@ state_machine:
       transition_state: CodeReviewState
     mordor:
       mordor-glue:
-        parallelism: 2
+        parallelism: 5
       mordor-canary:
-        parallelism: 2
+        parallelism: 10
 
   QueuedState:
     status_checks:
