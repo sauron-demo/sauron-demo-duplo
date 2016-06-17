@@ -10,9 +10,17 @@ state_machine:
     hotfix: true
     skip-ci: true
     on_success:
-      transition_state: IntegrationTestState
+      transition_state: FrodoState
     on_failure:
       transition_state: CodeReviewState
+
+  FrodoState:
+    status_checks:
+      - frodo: null
+    on_success:
+      transition_state: IntegrationTestState
+    on_failure:
+      transition_state: null
 
   IntegrationTestState:
     status_checks:
@@ -21,7 +29,7 @@ state_machine:
     on_success:
       transition_state: QueuedState
     on_failure:
-      transition_state: CodeReviewState
+      transition_state: null
     mordor:
       mordor-glue:
         parallelism: 5
