@@ -9,6 +9,15 @@ state_machine:
     hotfix: true
     skip-ci: true
     on_success:
+      transition_state: SentryTestState
+    on_failure:
+      transition_state: CodeReviewState
+      
+  SentryTestState:
+    status_checks:
+      - frontend-beta: null
+      - backend-beta: null
+    on_success:
       transition_state: QueuedState
     on_failure:
       transition_state: CodeReviewState
