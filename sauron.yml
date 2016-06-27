@@ -9,7 +9,7 @@ state_machine:
     hotfix: true
     skip-ci: true
     on_success:
-      transition_state: QueuedState
+      transition_state: SentryTestState
     on_failure:
       transition_state: CodeReviewState
       
