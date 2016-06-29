@@ -15,8 +15,8 @@ state_machine:
       
   SentryTestState:
     status_checks:
-      - frontend-beta: null
-      - backend-beta: null
+      - sentry-frontend-beta: null
+      - sentry-backend-beta: null
     on_success:
       transition_state: QueuedState
     on_failure:
