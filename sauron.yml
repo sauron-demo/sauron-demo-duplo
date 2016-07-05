@@ -9,15 +9,6 @@ state_machine:
     hotfix: true
     skip-ci: true
     on_success:
-      transition_state: SentryTestState
-    on_failure:
-      transition_state: CodeReviewState
-      
-  SentryTestState:
-    status_checks:
-      - sentry-frontend-beta: null
-      - sentry-backend-beta: null
-    on_success:
       transition_state: QueuedState
     on_failure:
       transition_state: CodeReviewState
@@ -51,14 +42,23 @@ state_machine:
       - mordor-glue: null
       - mordor-canary: null
     on_success:
-      transition_state: null
+      transition_state: SentryTestState
     on_failure:
-      transition_state: null
+      transition_state: SentryTestState
     mordor:
       mordor-glue:
         parallelism: 5
       mordor-canary:
         parallelism: 10
+        
+  SentryTestState:
+    status_checks:
+      - sentry-frontend-beta: null
+      - sentry-backend-beta: null
+    on_success:
+      transition_state: null
+    on_failure:
+      transition_state: null
 
 hotfix:
   approved_team_names:
