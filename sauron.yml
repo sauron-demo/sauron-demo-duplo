@@ -25,9 +25,9 @@ state_machine:
     status_checks:
       - circleci-master: null
     on_success:
-      transition_state: IntegrationTestState
+      transition_state: ValidationState
     on_failure:
-      transition_state: IntegrationTestState
+      transition_state: ValidationState
 
   FrodoState:
     status_checks:
