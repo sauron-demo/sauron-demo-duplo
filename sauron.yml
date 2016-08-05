@@ -51,10 +51,11 @@ state_machine:
       mordor-canary:
         parallelism: 10
         
-  SentryTestState:
+  ValidationState:
     status_checks:
       - sentry-frontend-beta: null
       - sentry-backend-beta: null
+      - sumologic-5xx: null
     on_success:
       transition_state: null
     on_failure:
