@@ -42,9 +42,9 @@ state_machine:
       - mordor-glue: null
       - mordor-canary: null
     on_success:
-      transition_state: SentryTestState
+      transition_state: ValidationState
     on_failure:
-      transition_state: SentryTestState
+      transition_state: ValidationState
     mordor:
       mordor-glue:
         parallelism: 5
