@@ -13,7 +13,7 @@ state_machine:
     on_failure:
       transition_state: CodeReviewState
 
-  QueuedState:
+  QQQueuedState:
     status_checks:
       - merged: null
     on_success:
